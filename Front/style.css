@@ -1,0 +1,133 @@
+/* ========== Design System (Let's Go BSI) ========== */
+:root{
+  --bg: #0B1220;
+  --bg-soft: #0F172A;
+  --card: #111827;
+  --text: #E5E7EB;
+  --muted: #9CA3AF;
+  --brand: #8B5CF6;
+  --brand-2: #7C3AED;
+  --radius: 16px;
+  --shadow: 0 6px 30px rgba(0,0,0,.25);
+}
+
+/* Tema claro */
+:root.light{
+  --bg: #F9FAFB;
+  --bg-soft: #FFFFFF;
+  --card: #FFFFFF;
+  --text: #111827;
+  --muted: #4B5563;
+  --brand: #7C3AED;
+  --brand-2: #6D28D9;
+}
+
+/* Reset + tipografia */
+*{box-sizing:border-box;margin:0;padding:0}
+html:focus-within{scroll-behavior:smooth}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+ul,ol{padding-left:1.25rem}
+
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px)}
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{left:12px;top:12px;width:auto;height:auto;background:#000;color:#fff;padding:.5rem .75rem;border-radius:10px}
+
+.container{width:min(1120px,92vw);margin-inline:auto}
+.section{padding: clamp(2.5rem, 4vw, 4rem) 0}
+.section--alt{background: var(--bg-soft)}
+
+.site-header{
+  position: sticky; top:0; z-index: 50;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: saturate(120%) blur(6px);
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+}
+.site-header .container{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+.brand__logo{display:grid;place-items:center;width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow: var(--shadow)}
+.brand__name{font-family:"Playfair Display", serif;font-size: clamp(1.1rem, 2vw, 1.35rem)}
+
+.nav{display:flex;gap:12px;align-items:center}
+.nav a{opacity:.9;padding:.5rem .75rem;border-radius:12px}
+.nav a:hover,.nav a:focus-visible{opacity:1;background:color-mix(in srgb, var(--text) 10%, transparent)}
+.nav-toggle{display:none;background:transparent;border:0;font-size:1.25rem}
+
+@media (max-width: 860px){
+  .nav{position:fixed;inset:64px 12px auto 12px;background:var(--bg-soft);padding:12px;border-radius:16px;border:1px solid color-mix(in srgb, var(--text) 12%, transparent);display:none;flex-direction:column}
+  .nav[aria-expanded="true"]{display:flex}
+  .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px}
+}
+
+.hero{position:relative;isolation:isolate;background:radial-gradient(1200px 600px at 70% -30%, color-mix(in srgb,var(--brand) 26%, transparent), transparent), var(--bg)}
+.hero__bg{position:absolute;inset:0;opacity:.35;background:url('site.jpeg') center/cover no-repeat;z-index:-1}
+.hero__content{padding: clamp(2.5rem, 8vw, 8rem) 0;display:grid;gap:1.2rem}
+.hero__title{font-family:"Playfair Display", serif;font-weight:800;letter-spacing:-.02em;font-size: clamp(2rem, 5vw, 3.25rem)}
+.hero__title em{font-style:normal;background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero__subtitle{max-width:60ch;opacity:.9}
+.hero__actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.25rem}
+
+.grid-2{display:grid;grid-template-columns: 1.1fr .9fr;gap:clamp(1rem,3vw,2rem)}
+@media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+
+.card{background:var(--card);border:1px solid color-mix(in srgb, var(--text) 12%, transparent);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(1rem, 2.5vw, 1.25rem)}
+.media{display:grid;gap:.5rem;align-content:start}
+.media img{border-radius:12px}
+
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media (max-width:1000px){.features{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.features{grid-template-columns:1fr}}
+.feature{background:var(--card);border:1px solid color-mix(in srgb, var(--text) 12%, transparent);border-radius:var(--radius);padding:1rem;display:grid;gap:.5rem}
+.feature__icon{font-size:1.35rem;opacity:.9}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width:920px){.cards{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+
+.form{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.form label{display:grid;gap:.35rem}
+.form input,.form textarea{
+  background: var(--bg);
+  border:1px solid color-mix(in srgb, var(--text) 16%, transparent);
+  color:var(--text);
+  border-radius:12px;
+  padding:.75rem .85rem;
+}
+.form .full{grid-column:1 / -1}
+.form button{justify-self:start}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;border-radius:12px;padding:.7rem 1rem;border:1px solid transparent;transition:.2s}
+.btn--primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff}
+.btn--primary:hover{transform:translateY(-1px)}
+.btn--secondary{background:transparent;border-color:color-mix(in srgb, var(--text) 30%, transparent)}
+.btn--ghost{background:transparent;border-color:transparent;opacity:.9}
+.btn--ghost:hover{opacity:1}
+
+.quickgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media (max-width:1000px){.quickgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:720px){.quickgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.quickgrid{grid-template-columns:1fr}}
+.quickcard{display:grid;justify-items:center;gap:.5rem;padding:1.2rem;background:var(--card);border-radius:var(--radius);border:1px solid color-mix(in srgb, var(--text) 12%, transparent)}
+.quickcard i{font-size:1.5rem}
+.quickcard:hover{transform:translateY(-1px)}
+
+.panel{margin-top:1.5rem}
+.panel h2{margin-bottom:.25rem}
+
+.site-footer{border-top:1px solid color-mix(in srgb, var(--text) 12%, transparent);padding:1rem 0;background:var(--bg-soft)}
+.footer__grid{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.backtop{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1px solid color-mix(in srgb, var(--text) 16%, transparent)}
+
+:focus-visible{outline: 2px solid color-mix(in srgb, var(--brand) 70%, white);outline-offset:3px}

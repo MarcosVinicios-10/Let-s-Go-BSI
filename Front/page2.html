@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Let's Go BSI — Portal</title>
+  <meta name="description" content="Atalhos para Biblioteca, Professores, Disciplinas, Localização e Contato.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="theme-auto">
+<a class="skip-link" href="#principal">Ir para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand__logo" aria-hidden="true">⌘</span><span class="brand__name">Let's Go BSI</span></a>
+    <nav class="nav">
+      <a href="index.html">Início</a>
+      <button class="btn btn--ghost theme-btn" type="button" id="themeBtn" aria-label="Alternar tema"><i class="fa-solid fa-circle-half-stroke"></i><span> Tema</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="principal" class="container section">
+  <h1 class="visually-hidden">Portal Let's Go BSI</h1>
+  <div class="quickgrid">
+    <a class="quickcard" href="#" aria-label="Buscar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>Buscar</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Biblioteca">
+      <i class="fa-solid fa-book"></i>
+      <span>Biblioteca</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Professores">
+      <i class="fa-solid fa-user-tie"></i>
+      <span>Professores</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Disciplinas">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Disciplinas</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Carreiras em TI">
+      <i class="fa-solid fa-briefcase"></i>
+      <span>Carreiras em TI</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Localização">
+      <i class="fa-solid fa-location-dot"></i>
+      <span>Localização</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Contato">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Contato</span>
+    </a>
+    <a class="quickcard" href="#" aria-label="Configuração">
+      <i class="fa-solid fa-gear"></i>
+      <span>Configuração</span>
+    </a>
+  </div>
+
+  <section class="panel">
+    <h2>Sobre o curso</h2>
+    <p>O curso de <strong>Sistemas de Informação</strong> é uma graduação focada em tecnologia e gestão, preparando você para desenvolver soluções que conectam pessoas, dados e negócios.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <small>© <span id="year"></span> Let's Go BSI.</small>
+    <a href="#" class="backtop" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></a>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
