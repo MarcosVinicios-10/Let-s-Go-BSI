@@ -127,20 +127,25 @@
   <section id="contato" class="section section--alt">
     <div class="container">
       <h2>Fale conosco</h2>
-      <form class="form" action="#" method="post" aria-label="Formulário de contato">
+      <form class="form" action="#" method="post" aria-label="Formulário de contato" onsubmit="return false;">
+
         <label>
           <span>Seu nome</span>
-          <input type="text" name="nome" autocomplete="name" required>
+          <input type="text" name="nome" id="nome" autocomplete="name" required>
         </label>
+
         <label>
           <span>E‑mail</span>
-          <input type="email" name="email" autocomplete="email" required>
+          <input type="email" name="email" id="email" autocomplete="email" required>
         </label>
+
         <label class="full">
           <span>Mensagem</span>
-          <textarea name="mensagem" rows="4" required></textarea>
+          <textarea name="mensagem" id='mensagem' rows="4" required></textarea>
         </label>
-        <button class="btn btn--primary" type="submit">Enviar</button>
+
+        <button class="btn btn--primary" type="submit" id="enviar">Enviar</button>
+        
       </form>
     </div>
   </section>

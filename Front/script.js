@@ -28,3 +28,29 @@
     });
   }
 })();
+
+//Pegando as informações de contato
+const botao_enviar = document.querySelector('#enviar');
+
+botao_enviar.addEventListener('click',function(e){
+      e.preventDefault();
+      var nome= document.querySelector('#nome');
+      var nome = nome.value;
+  
+      var email= document.querySelector('#email');
+      var email = email.value;
+    
+      var mensagem= document.querySelector('#mensagem');
+      var mensagem = mensagem.value;
+
+      fetch('https://api.sheetmonkey.io/form/94LTj38FmdkV9xSe232n9Z',{
+        method:'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+
+        body: JSON.stringify({nome,email,mensagem})
+      });
+});
+
